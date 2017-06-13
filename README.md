@@ -1,13 +1,19 @@
 # minted-latex-docker
+This is a fork from: https://github.com/vvhof/minted-latex-docker
+Gitlab cannot use containers with an entrypoint. 
+So here is the image without one.
 
-A Docker Image to compile .tex including minted
 ## Usage
+Your gitlab-ci.yml could look like this:
 
-###Volumes 
-/inputData
-
-### command parameter
-location of entrypoint .tex file that should be compiled
-
-### example
-```docker run -v <dir>:/inputData vvhof/mintedlatex <.tex inside <dir> location>```
+```yml
+compile-pdf:
+  stage: build
+  image: fabianwrede/minted-latex-docker
+  script:     
+  - latexmk -pdf -pdflatex="pdflatex --shell-escape %O %S" 
+  artifacts:
+    name: "${CI_JOB_NAME}_${CI_COMMIT_REF_NAME}"
+    paths:
+    - "*.pdf"
+```
