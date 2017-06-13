@@ -4,8 +4,8 @@ MAINTAINER Fabian Wrede (forked from Vincent von Hof <vincent@vhof.de>, Andreas 
 RUN apt-get update -qyy 
 RUN apt-get install -qyy texlive-full \
 	 texlive-latex-extra \
-	 python3 \
-	 python3-pygments \
+	 python \
+	 python-pygments \
 	 biber \
 	 latexmk \
 	 make
