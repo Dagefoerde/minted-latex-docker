@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER Fabian Wrede (forked from Vincent von Hof <vincent@vhof.de>, Andreas Fuchs)
 
 RUN apt-get update -qyy 
