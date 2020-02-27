@@ -9,7 +9,7 @@ Your gitlab-ci.yml could look like this:
 ```yml
 compile-pdf:
   stage: build
-  image: fabianwrede/minted-latex-docker
+  image: dagefoerde/minted-latex-docker
   script:     
   - latexmk -pdf -pdflatex="pdflatex --shell-escape %O %S" 
   artifacts:
