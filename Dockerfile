@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-MAINTAINER Fabian Wrede (forked from Vincent von Hof <vincent@vhof.de>, Andreas Fuchs)
+MAINTAINER Jan Dageförde (forked from Fabian Wrede (forked from Vincent von Hof <vincent@vhof.de>, Andreas Fuchs))
 
 # avoid interaction during installation
 ENV DEBIAN_FRONTEND=noninteractive
@@ -19,7 +19,8 @@ RUN apt-get -qq install texlive-full \
 	 python-pygments \
 	 biber \
 	 latexmk \
-	 make
+	 make \
+	 git
 
 # Clean up APT when done.
 RUN apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
