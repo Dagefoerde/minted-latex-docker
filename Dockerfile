@@ -22,5 +22,7 @@ RUN apt-get -qq install texlive-full \
 	 make \
 	 git
 
+RUN apt-get -qq install python-pip
+
 # Clean up APT when done.
 RUN apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
