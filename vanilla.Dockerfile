@@ -13,7 +13,7 @@ RUN add-apt-repository -y universe
 RUN apt-get -qq update
 
 # Install packages
-RUN apt-get -qq \
+RUN apt-get -qq install \
 	 python \
 	 python-pip \
 	 python-pygments \
